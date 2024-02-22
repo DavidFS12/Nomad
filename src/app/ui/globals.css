@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+:root {
+  scroll-timeline-name: --myScroller;
+  scroll-timeline-axis: horizontal;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@keyframes slideRight {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: 150%;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: -120%;
+  }
+}
+
+.textRight {
+  animation: slideRight forwards;
+  animation-timeline: --myScroller;
+  white-space: nowrap;
+  position: fixed;
+  animation-range: entry 0% cover 30%;
+}
+
+.textLeft {
+  animation: slideLeft forwards;
+  animation-timeline: --myScroller;
+  white-space: nowrap;
+  position: fixed;
+  animation-range: entry 0% cover 25%;
+}
+
+@keyframes imgOjo {
+  from {
+    scale: 70%;
+  }
+
+  to {
+    scale: 100%;
+    opacity: 0;
+  }
+}
+
+.img2 {
+  /* position: fixed; */
+  animation: imgOjo forwards;
+  animation-timeline: --myScroller;
+  animation-range: entry 0% cover 40%;
+}
+
+/* @keyframes divOjo {
+  30% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(200px);
+  }
+}
+
+.img1 {
+  animation-timeline: --myScroller;
+  animation: divOjo forwards;
+  animation-range: entry 20% cover 50%;
+} */
+
+@keyframes slideRight2 {
+  from {
+    left: 0%;
+    opacity: 1;
+  }
+
+  to {
+    left: 30%;
+    position: fixed;
+  }
+}
+
+.textRight2 {
+  opacity: 0;
+  animation: slideRight2 forwards;
+  animation-timeline: --myScroller;
+  white-space: nowrap;
+  position: fixed;
+  animation-range: entry 0% cover 30%;
+}
+
+.animated-div p {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-div:hover p:first-child {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.animated-div:hover p:last-child {
+  opacity: 1;
+  transform: translateY(-140%);
+}
+
+@keyframes letter {
+  0% {
+    transform: scale(100%);
+  }
+
+  100% {
+    transform: scale(85%);
+  }
+}
+
+.letterClass {
+  animation-name: letter;
+  animation-fill-mode: forwards;
+  animation-timeline: --myScroller;
+  animation-range: entry 80% cover 90%;
+}
+
+@keyframes blog {
+  from {
+    transform: scale(1);
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+  }
+
+  to {
+    transform: scale(0.5);
+  }
+}
+
+.blog {
+  overflow: hidden;
+  animation-name: blog;
+  animation-timeline: --myScroller;
+  animation-range: entry 45% cover 80%;
+  /* animation-timeline: view(block 50% 80%); */
+  /* animation-fill-mode: both;
+  animation-duration: 1ms;
+  animation-timing-function: linear; */
+}
+
+.blogCards:hover {
+  background-color: blue;
+  transform: translateX(-350px);
+}
+
+.blogCards {
+  transition: transform 1s ease;
+}
+
+@keyframes reviewCard {
+  0% {}
+
+  100% {
+    left: -120%;
+  }
+}
+
+.reviewCard {
+  animation-name: reviewCard;
+  animation-fill-mode: forwards;
+  /* animation-timeline: view(); */
+  animation-timeline: --myScroller;
+  animation-range: entry 30% cover 50%;
+}
+
+.reviewCard2 {}
+
+@keyframes review_col_2 {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-20%);
+  }
+}
+
+.reviewCardCol2 {
+  animation-name: review_col_2;
+  animation-fill-mode: forwards;
+  /* animation-timeline: view(); */
+  animation-timeline: --myScroller;
+  animation-range: entry 35% cover 42%;
+}
+
+@keyframes awardInfinity {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+
+  }
+
+}
+
+.infinito {
+  animation: awardInfinity 10s linear infinite;
+}
